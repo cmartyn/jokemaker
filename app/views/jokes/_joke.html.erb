@@ -1,0 +1,11 @@
+<div id="<%= dom_id(joke) %>" class="flex flex-col gap-4 text-4xl font-display">
+  <% if joke.content.present? %>
+    <%= simple_format(joke.content) %>
+  <% else %>
+    <p>Generating...</p>
+  <% end %> 
+
+  <% if joke.cartoon.attached? %>
+    <%= image_tag joke.cartoon%>
+  <% end %>
+</div>
